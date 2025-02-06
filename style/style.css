@@ -154,3 +154,13 @@ button:hover {
 .copy:hover svg {
  color: var(--button-hover-text-color);
 }
+
+.delete-button {
+  margin: 9px;
+  background-color: red;
+  color: white;
+  padding: 10px 15px; /* Добавляем отступы для кнопки */
+  border: none; /* Убираем стандартную рамку */
+  border-radius: 5px; /* Закругляем углы кнопки */
+  cursor: pointer; /* Меняем курсор при наведении */
+}

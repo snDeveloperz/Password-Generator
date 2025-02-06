@@ -10,22 +10,23 @@
     <!-- Link CSS -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Web-site icon -->
-    <link rel="web-site icon" type="png" href="./img/logo.png">
-    <title>Генератор паролей</title>
+    <link rel="icon" type="image/png" href="./img/logo.png">
+    <title>Password Generator</title>
 </head>
 <body>
+
     <div class="container">
-        <h1>Генератор паролей</h1>
-        <label for="length">Длина пароля:</label>
+        <h1>Password Generator</h1>
+        <label for="length">Password length</label>
         <input type="number" id="length" value="12" min="1" max="100">
         
-        <button id="generate">Сгенерировать пароль</button>
+        <button id="generate">Generate</button>
         
-        <h2>Сгенерированный пароль:</h2>
+        <h2>Generated Password:</h2>
         <input type="text" id="password" readonly>
         
         <button class="copy" id="copy">
-            <span data-text-initial="Скопировать в буфер" data-text-end="Скопировано!" class="tooltip">Скопировать в буфер</span>
+            <span class="tooltip">Copied!</span>
             <span>
                 <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/2000/svg" class="clipboard">
                     <g>
@@ -34,7 +35,10 @@
                 </svg>
             </span>
         </button>
-    </div>
+
+        <h2>Password History:</h2>
+        <ul id="password-history"></ul>
+
 
     <script src="./script/script.js"></script>
 </body>
