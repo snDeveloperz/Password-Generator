@@ -3,13 +3,13 @@ document.getElementById('generate').addEventListener('click', function() {
     const phraseMode = document.getElementById('phrase-mode').checked;
     const errorMessage = document.getElementById('error-message');
 
-    if (isNaN(length) || length < 1) {
+    if (isNaN(length) || length < 6) {
         errorMessage.classList.add('show');
-        setTimeout(() => errorMessage.classList.remove('show'), 3000); // Убираем сообщение через 3 сек
+        setTimeout(() => errorMessage.classList.remove('show'), 3000); 
         return;
     }
 
-    errorMessage.classList.remove('show'); // Если ошибок нет, скрываем сообщение
+    errorMessage.classList.remove('show'); 
     const password = phraseMode ? generatePassphrase() : generateRandomPassword(length);
     document.getElementById('password').value = password;
     addToHistory(password);
@@ -31,12 +31,12 @@ const words = [
     "sun", "moon", "tree", "river", "mountain", "cloud", "stone", "fire", "ocean", "wind",
     "storm", "forest", "desert", "valley", "thunder", "lightning", "rain", "snow", "flower", "grass",
     "wave", "earth", "sky", "star", "planet", "comet", "shadow", "breeze", "glacier", "volcano", "apple", 
-    "621", "367", "286", "@#", "154", "5$#", "542s", "4w4", "5dsft", "szxf", "54sf",
+    "621", "367", "286", "678", "772"
 ];
 
 
 function generateRandomPassword(length) {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
 }
 

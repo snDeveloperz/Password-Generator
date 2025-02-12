@@ -1,6 +1,24 @@
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --background-color: #f4f4f4;
+  --white: white;
+  --black: #000000;
+  --gray: #CCCCCC;
+  --light-gray: #f4f3f3;
+  --red: #ff4d4d;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --button-diameter: 36px;
+  --button-border-radius: 10px;
+  --tooltip-font-size: 12px;
+  --tooltip-padding: 7px;
+  --tooltip-offset: 8px;
+}
+
 body {
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f4f4f4;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,10 +27,10 @@ body {
 }
 
 .container {
-  background: white;
+  background: var(--white);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 }
 
 h1 {
@@ -33,37 +51,27 @@ input[type="text"] {
 
 button {
   padding: 10px;
-  background-color: #000000;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--button-hover-shadow);
 }
-
 
 .copy {
-  --button-bg: #000000;
-  --button-hover-bg: #000000;
-  --button-text-color: #CCCCCC;
-  --button-hover-text-color: #ffffff;
-  --button-border-radius: 10px;
-  --button-diameter: 36px;
-  --button-outline-width: 1px;
-  --button-outline-color: rgb(255, 255, 255);  
-  --tooltip-bg: #f4f3f3;
-  --toolptip-border-radius: 4px;
-  --tooltip-font-family: Montserrat, monospace;
-  --tooltip-font-size: 12px;
+  --button-bg: var(--black);
+  --button-hover-bg: var(--black);
+  --button-text-color: var(--gray);
+  --button-hover-text-color: var(--white);
+  --button-outline-color: var(--white);
+  --tooltip-bg: var(--light-gray);
   --tootip-text-color: rgb(50, 50, 50);
-  --tooltip-padding-x: 7px;
-  --tooltip-padding-y: 7px;
-  --tooltip-offset: 8px;
 }
-  
+
 .copy {
   box-sizing: border-box;
   width: var(--button-diameter);
@@ -76,106 +84,54 @@ button:hover {
   position: relative;
   outline: none;
 }
-  
-.tooltip {
-  position: absolute;
-  opacity: 0;
-  visibility: 0;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-  font: var(--tooltip-font-size) var(--tooltip-font-family);
-  color: var(--tootip-text-color);
-  background: var(--tooltip-bg);
-  padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
-  border-radius: var(--toolptip-border-radius);
-  pointer-events: none;
-  transition: all var(--tooltip-transition-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-  
-.tooltip::before {
-  content: attr(data-text-initial);
-}
-  
-.tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: calc(var(--tooltip-padding-y) / 2 * -1);
-  width: var(--tooltip-padding-y);
-  height: var(--tooltip-padding-y);
-  background: inherit;
-  left: 50%;
-  transform: translateX(-50%) rotate(45deg);
-  z-index: -999;
-  pointer-events: none;
-}
-  
+
 .copy svg {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease;
 }
-  
+
 .checkmark {
   display: none;
-}
-  
-
-.copy:hover .tooltip,
-.copy:focus:not(:focus-visible) .tooltip {
-  opacity: 1;
-  visibility: visible;
-  top: calc((100% + var(--tooltip-offset)) * -1);
-}
-  
-.copy:focus:not(:focus-visible) .tooltip::before {
-  content: attr(data-text-end);
-}
-  
-.copy:focus:not(:focus-visible) .clipboard {
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.copy:focus:not(:focus-visible) .checkmark {
+.copy.copied .checkmark {
   display: block;
+  opacity: 1;
 }
-  
+
 .copy:hover,
 .copy:focus {
   background-color: var(--button-hover-bg);
 }
-  
+
 .copy:active {
-  outline: var(--button-outline-width) solid var(--button-outline-color);
-}
-  
-.copy:hover svg {
- color: var(--button-hover-text-color);
+  outline: 1px solid var(--button-outline-color);
 }
 
+.copy:hover svg {
+  color: var(--button-hover-text-color);
+}
 .delete-button {
   margin-left: 10px;
   padding: 4px 10px;
-  background: rgb(0, 0, 0);
-  color: white;
+  background: var(--black);
+  color: var(--white);
   border: none;
   cursor: pointer;
   border-radius: 5px;
 }
 
-.tooltip {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 #error-message {
   display: none;
-  background: #ff4d4d;
-  color: white;
+  background: var(--red);
+  color: var(--white);
   padding: 10px;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
   margin-top: 10px;
   text-align: center;
   font-weight: bold;
@@ -183,10 +139,36 @@ button:hover {
 
 #error-message.show {
   display: block;
-  animation: fadeIn 0.5s ease-in-out;
+  animation: fadeIn 0.7s ease-in-out;
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+.wifi-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--button-border-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wifi-button:hover {
+  background-color: #333;
+}
+
+.wifi-button i {
+  font-size: 20px;
+  color: var(--white);
+}
+
+.bx {
+  color: var(--black);
 }

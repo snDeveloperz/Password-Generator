@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link CSS -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Web-site icon -->
-    <link rel="icon" type="png" href="/img/Logo.png">
+    <link rel="icon" type="png" href="/img/logotype.png">
     <title>Password Generator</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
         <div id="error-message" class="hidden">Please enter a valid password length.</div>  
         <h1>Password Generator</h1>
         <label for="length">Password length</label>        
-        <input type="number" id="length" value="12" min="1" max="100">
+        <input type="number" id="length" value="8" min="1" max="50">
         <label>
             <input type="checkbox" id="phrase-mode">
             Use passphrase (easy to remember)
@@ -31,7 +33,6 @@
         <input type="text" id="password" readonly>
         
         <button class="copy" id="copy">
-            <span class="tooltip">Copied!</span>
             <span>
                 <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/2000/svg" class="clipboard">
                     <g>
@@ -39,6 +40,10 @@
                     </g>
                 </svg>
             </span>
+        </button>
+
+        <button class="wifi-button">
+            <a href="./wifi-generator/wifi.html"><i class='bx bx-wifi'></i></a>
         </button>
 
         <h2>Password History:</h2>
