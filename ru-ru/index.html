@@ -10,29 +10,31 @@
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link CSS -->
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <!-- Web-site icon -->
     <link rel="icon" type="png" href="/img/logotype.png">
-    <title>Password Generator</title>
+    <title>Генератор паролей</title>
 </head>
 <body>
-    
+
     <div class="container">
         <button class="language-toggle">
-            <a href="./ru-ru/index.html"><i class='bx bx-planet'></i></a>
+            <a href="../en-us/index.html"><i class='bx bx-planet'></i></a>
         </button>
-        <div id="error-message" class="hidden">Please enter a valid password length.</div>  
-        <h1>Password Generator</h1>
-        <label for="length">Password length</label>        
+        <div id="error-message" class="hidden">Введите верное количество символов.</div>  
+        <h1>Генератор паролей</h1>    
+        <label for="length">Длина паролей</label>        
         <input type="number" id="length" value="8" min="1" max="50">
         <label>
             <input type="checkbox" id="phrase-mode">
-            Use passphrase (easy to remember)
+            Использовать фразы
         </label>
 
-        <button id="generate">Generate</button>
-        <h2>Generated Password:</h2>
+        <button id="generate">Сгенерировать</button>
+        
+        <h2>Сгенерированный пароль</h2>
         <input type="text" id="password" readonly>
+        
         <button class="copy" id="copy">
             <span>
                 <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/2000/svg" class="clipboard">
@@ -44,12 +46,13 @@
         </button>
 
         <button class="wifi-button">
-            <a href="./en-us/wifi-generator/wifi.html"><i class='bx bx-wifi'></i></a>
+            <a href="../ru-ru/wifi-generator/wifi.html"><i class='bx bx-wifi'></i></a>
         </button>
 
-        <h2>Password History:</h2>
+        <h2>История паролей</h2>
         <ul id="password-history"></ul>
 
-    <script src="./script/script.js"></script>
+
+    <script src="../script/script.js"></script>
 </body>
 </html>

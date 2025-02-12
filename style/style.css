@@ -169,6 +169,28 @@ button:hover {
   color: var(--white);
 }
 
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 8px;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: var(--button-border-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+.language-toggle:hover {
+  background-color: #333;
+}
+
+.language-toggle i {
+  font-size: 20px;
+  color: var(--white);
+}
 .bx {
-  color: var(--black);
+  color: black;
 }
