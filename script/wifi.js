@@ -1,10 +1,10 @@
-document.getElementById("generate-wifi").addEventListener("click", function () {
+document.getElementById("generate-wifi").addEventListener("click", function() {
     const ssid = document.getElementById("ssid").value.trim();
     const errorMessage = document.getElementById('error-message');
-    
+
     if (!ssid) {
         errorMessage.classList.add('show');
-        setTimeout(() => errorMessage.classList.remove('show'), 3000); 
+        setTimeout(() => errorMessage.classList.remove('show'), 3000);
         return;
     }
 
@@ -42,11 +42,11 @@ function showCustomAlert(message) {
 
     alertElement.style.display = "flex";
 
-    closeButton.addEventListener("click", function () {
+    closeButton.addEventListener("click", function() {
         alertElement.style.display = "none";
     });
 
-    alertElement.addEventListener("click", function (event) {
+    alertElement.addEventListener("click", function(event) {
         if (event.target === alertElement) {
             alertElement.style.display = "none";
         }

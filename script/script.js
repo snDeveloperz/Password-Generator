@@ -5,11 +5,11 @@ document.getElementById('generate').addEventListener('click', function() {
 
     if (isNaN(length) || length < 6) {
         errorMessage.classList.add('show');
-        setTimeout(() => errorMessage.classList.remove('show'), 3000); 
+        setTimeout(() => errorMessage.classList.remove('show'), 3000);
         return;
     }
 
-    errorMessage.classList.remove('show'); 
+    errorMessage.classList.remove('show');
     const password = phraseMode ? generatePassphrase() : generateRandomPassword(length);
     document.getElementById('password').value = password;
     addToHistory(password);
@@ -30,18 +30,21 @@ document.getElementById('copy').addEventListener('click', function() {
 const words = [
     "sun", "moon", "tree", "river", "mountain", "cloud", "stone", "fire", "ocean", "wind",
     "storm", "forest", "desert", "valley", "thunder", "lightning", "rain", "snow", "flower", "grass",
-    "wave", "earth", "sky", "star", "planet", "comet", "shadow", "breeze", "glacier", "volcano", "apple", 
-    "621", "367", "286", "678", "772"
-];
+    "wave", "earth", "sky", "star", "planet", "comet", "shadow", "breeze", "glacier", "volcano", "apple",
+    "621", "367", "286", "678", "772"];
 
 
 function generateRandomPassword(length) {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    return Array.from({ length }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
+    return Array.from({
+        length
+    }, () => chars[Math.floor(Math.random() * chars.length)]).join("");
 }
 
 function generatePassphrase() {
-    return Array.from({ length: 4 }, () => words[Math.floor(Math.random() * words.length)]).join("-");
+    return Array.from({
+        length: 4
+    }, () => words[Math.floor(Math.random() * words.length)]).join("-");
 }
 
 function addToHistory(password) {

@@ -1,14 +1,14 @@
 :root {
-  --font-family: 'Montserrat', sans-serif;
+  --font-family: 'Montserrat',sans-serif;
   --background-color: #f4f4f4;
   --white: white;
   --black: #000000;
   --gray: #CCCCCC;
   --light-gray: #f4f3f3;
   --red: #ff4d4d;
-  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --shadow: 0 0 10px rgba(0,0,0,0.1);
   --border-radius: 8px;
-  --button-hover-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --button-hover-shadow: 0 4px 8px rgba(0,0,0,0.2);
   --button-diameter: 36px;
   --button-border-radius: 10px;
   --tooltip-font-size: 12px;
@@ -42,8 +42,7 @@ label {
   margin-bottom: 10px;
 }
 
-input[type="number"],
-input[type="text"] {
+input[type="number"],input[type="text"] {
   width: 90%;
   padding: 10px;
   margin-bottom: 20px;
@@ -69,7 +68,7 @@ button:hover {
   --button-hover-text-color: var(--white);
   --button-outline-color: var(--white);
   --tooltip-bg: var(--light-gray);
-  --tootip-text-color: rgb(50, 50, 50);
+  --tootip-text-color: rgb(50,50,50);
 }
 
 .copy {
@@ -89,7 +88,7 @@ button:hover {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   transition: opacity 0.3s ease;
 }
 
@@ -104,8 +103,7 @@ button:hover {
   opacity: 1;
 }
 
-.copy:hover,
-.copy:focus {
+.copy:hover,.copy:focus {
   background-color: var(--button-hover-bg);
 }
 
@@ -116,6 +114,7 @@ button:hover {
 .copy:hover svg {
   color: var(--button-hover-text-color);
 }
+
 .delete-button {
   margin-left: 10px;
   padding: 4px 10px;
@@ -143,8 +142,16 @@ button:hover {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+      opacity: 0;
+      transform: translateY(-5px);
+  }
+
+to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+
 }
 
 .wifi-button {
@@ -191,6 +198,7 @@ button:hover {
   font-size: 20px;
   color: var(--white);
 }
+
 .bx {
   color: black;
 }

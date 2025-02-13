@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../style/style.css">
+        <link rel="icon" type="image/png" href="/img/logotype-wifi.png">
+        <title>
+            Wi-Fi Password Generator
+        </title>
+    </head>
+    <body>
+        <div class="container">
+            <a href="../../index.html">
+                <i class="bx bx-arrow-back">
+                </i>
+            </a>
+            <div id="error-message" class="hidden">
+                Please enter a Wi-Fi network name (SSID).
+            </div>
+            <h1>
+                Wi-Fi Password Generator
+            </h1>
+            <label for="ssid">
+                Wi-Fi Network Name (SSID)
+            </label>
+            <input type="text" id="ssid" placeholder="Enter Wi-Fi name (Without Russian letters)">
+            </input>
+            <button id="generate-wifi">
+                Generate Wi-Fi Password
+            </button>
+            <h2>
+                Generated Password:
+            </h2>
+            <p id="wifi-password">
+            </p>
+            <h2>
+                Wi-Fi QR Code:
+            </h2>
+            <div id="qrcode">
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+        </script>
+        <script src="../script/wifi.js">
+        </script>
+    </body>
+</html>
